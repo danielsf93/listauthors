@@ -10,6 +10,8 @@ class listauthors extends GenericPlugin {
     
             if ($success && $this->getEnabled()) {
                 HookRegistry::register('TemplateResource::getFilename', array($this, '_overridePluginTemplates'));
+                HookRegistry::register('TemplateResource::getFilename', array($this, '_overridePluginTemplatesnovamente'));
+
     
         }
     
@@ -20,6 +22,15 @@ class listauthors extends GenericPlugin {
             $templatePath = $args[0];
             if ($templatePath === 'lib/pkp/templates/controllers/grid/users/author/form/authorForm.tpl') {
                 $args[0] = 'plugins/generic/listauthors/templates/controllers/grid/users/author/form/authorForm.tpl';
+            }
+            return false;
+        }
+
+
+        public function _overridePluginTemplatesnovamente($hookName, $args) {
+            $templatePath = $args[0];
+            if ($templatePath === 'lib/pkp/templates/common/userDetails.tpl') {
+                $args[0] = 'plugins/generic/listauthors/templates/commom/userDetails.tpl';
             }
             return false;
         }

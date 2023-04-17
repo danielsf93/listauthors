@@ -20,8 +20,8 @@ aaaaaaaaaaaaaaaaaaa
 
 <hr>
 {fbvFormSection title="meu.teste"}
-<label for="ddlCores">Selecione um Autor ou registre um novo:</label><br>
-<select id="ddlCores" name="ddlCores">
+<label for="slctusr">Selecione um Autor ou registre um novo:</label><br>
+<select id="slctusr" name="slctusr">
 <option value="lobo">lobo</option> 
 <option value="cobra">cobra</option> 
 <option value="tatu">tatu</option> 
@@ -33,11 +33,11 @@ aaaaaaaaaaaaaaaaaaa
 <h2 id="resultado"></h2>  
 <script>
 	document.getElementById("btnExibir").onclick = function () {
-		let ddl = document.getElementById('ddlCores');
-		let userfinal = Array.from(ddl.options)
+		let ddl = document.getElementById('slctusr');
+		let $userfinal = Array.from(ddl.options)
 				.filter(option => option.selected)
 				.map(option => option.value);
-		document.getElementById("resultado").innerHTML = "Você selecionou: " + userfinal;
+		document.getElementById("resultado").innerHTML = "Você selecionou: " + $userfinal;
 	};
 
 	</script>       
@@ -53,7 +53,7 @@ aaaaaaaaaaaaaaaaaaa
 <form class="pkp_form" id="editAuthor" method="post" action="{url op="updateAuthor" authorId=$authorId}">
 	{csrf}
 	{include file="controllers/notification/inPlaceNotification.tpl" notificationId="authorFormNotification"}
-
+	
 	{include
 		file="common/userDetails.tpl"
 		disableUserNameSection=true
@@ -70,6 +70,10 @@ aaaaaaaaaaaaaaaaaaa
 		extraContentSectionUnfolded=true
 		countryRequired=true
 	}
+
+
+{** fazer regra aqui, onde a opção novo mostre os campos? *}
+
 bbbbbbbbbbbbbbbbb
 	{fbvFormArea id="submissionSpecific"}
 		{fbvFormSection id="userGroupId" title="submission.submit.contributorRole" list=true required=true}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <primary_locale>pt_BR</primary_locale>
+  <plugin
+    id="listauthors"
+    system="3.2.1-1"
+    package="listauthors"
+    directory="listauthors"
+    name="listauthors"
+    description="Listar autores para submissão rápida"
+    version="1.0.0"
+    date="2023-04-17"
+    author="STI FFLCH and ABCD USP"
+    email="sti.fflch@usp.br"
+    url="https://github.com/danielsf93/listauthors"
+  >
+  </plugin>
+</manifest>

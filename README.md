@@ -1,0 +1,3 @@
+# listauthors
+
+/plugins/generic/listauthors/
